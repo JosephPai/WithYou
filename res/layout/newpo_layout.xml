@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="发布"
+        android:textColor="#fff"
+        android:textSize="24sp"
+        android:background="#0E6DB0"/>
+    
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:orientation="horizontal">
+        
+        <TextView 
+            android:text="位置"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"/>
+        <EditText 
+            android:id="@+id/spot_newpo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="输入您要查询的位置"
+            android:layout_weight="1"
+            android:maxLines="2"/>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:orientation="horizontal">
+        
+        <TextView 
+            android:text="赏金"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"/>
+        <EditText
+            android:id="@+id/reward_newpo" 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="输入您悬赏金额"
+            android:layout_weight="1"
+            android:maxLines="2"/>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:orientation="horizontal">
+        
+        <TextView 
+            android:text="备注"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"/>
+        <EditText
+            android:id="@+id/ps_newpo" 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="备注"
+            android:layout_weight="1"
+            android:maxLines="2"/>
+    </LinearLayout>
+    
+    <LinearLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:layout_gravity="center_horizontal"
+	    android:layout_marginTop="40dp">
+
+	    <Button
+	        android:id="@+id/post"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="发布"
+	        android:background="#1E90FF" />
+
+	    <Button
+	        android:id="@+id/cancle_post"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="取消"
+	        android:layout_marginLeft="40dp"
+	        android:background="#1E90FF" />
+
+	</LinearLayout>
+
+</LinearLayout>

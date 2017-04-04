@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="详情"
+        android:textColor="#fff"
+        android:textSize="24sp"
+        android:background="#0E6DB0"/>
+    
+    <TextView 
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+        
+        <TextView 
+            android:layout_width="8dp"
+            android:layout_height="50dp"
+            />
+        <ImageView 
+            android:id="@+id/image_detail"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bai"/>
+        <TextView
+            android:id="@+id/username_detail" 
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:textSize="22sp"
+            android:text="用户名"/>
+        <TextView 
+            android:id="@+id/time_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:textColor="#CDC9C9"
+            android:text="17:00"
+            android:textSize="16sp"/>
+    </LinearLayout>
+    
+    <TextView 
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="11dp"/>
+    
+    <TextView 
+        android:background="#DBDBDB"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        
+        <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_gravity="center_vertical"
+        android:textSize="20sp"
+        android:text="悬赏："/>
+        <TextView 
+        android:id="@+id/reward_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center_vertical"
+        android:textSize="18sp"
+        android:text="6.00元"/>
+    </LinearLayout>
+    
+    <TextView 
+        android:background="#DBDBDB"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        
+        <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_gravity="center_vertical"
+        android:textSize="20sp"
+        android:text="地点："/>
+        <TextView 
+        android:id="@+id/spot_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center_vertical"
+        android:textSize="18sp"
+        android:text="北京科技大学"/>
+    </LinearLayout>
+    
+    <TextView 
+        android:background="#DBDBDB"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        
+        <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_gravity="center_vertical"
+        android:textSize="20sp"
+        android:text="备注："/>
+        <TextView 
+        android:id="@+id/ps_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center_vertical"
+        android:textSize="18sp"
+        android:text="HHHHH把照片拍清楚一点啊啊啊啊啊啊啊啊啊啊啊"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:layout_weight="0.10"
+        android:gravity="bottom"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="3" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/send_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发送" />
+        <Button 
+            android:id="@+id/addimg_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="图片"/>
+    </LinearLayout>
+
+</LinearLayout>

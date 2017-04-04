@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    xmlns:tools="http://schemas.android.com/tools"  
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent"  
+    android:orientation="vertical" >  
+  
+    
+  
+    <android.support.v4.view.ViewPager  
+        android:id="@+id/viewPager"  
+        android:layout_width="match_parent"  
+        android:layout_height="0dp"  
+        android:layout_weight="1" >  
+    </android.support.v4.view.ViewPager>  
+  
+    <LinearLayout  
+        android:layout_width="match_parent"  
+        android:layout_height="55dp"  
+        android:background="#0E6DB0"  
+        android:orientation="horizontal" >  
+  
+        <LinearLayout  
+            android:id="@+id/lytaskhall"  
+            android:layout_width="0dp"  
+            android:layout_height="match_parent"  
+            android:layout_weight="1"  
+            android:gravity="center"  
+            android:orientation="vertical" >  
+  
+            <ImageView  
+                android:id="@+id/litaskhall"  
+                android:layout_width="wrap_content"  
+                android:layout_height="0dp"
+                android:layout_weight="1"  
+                android:background="#00000000"  
+                android:src="@drawable/tab_taskhall" />  
+  
+            <TextView  
+                android:id="@+id/lttaskhall"  
+                android:layout_width="wrap_content"  
+                android:layout_height="0dp"
+                android:layout_weight="1"  
+                android:text="任务大厅"  
+                android:textColor="#FFFFFF" />  
+        </LinearLayout>  
+  
+        <LinearLayout  
+            android:id="@+id/lymyissue"  
+            android:layout_width="0dp"  
+            android:layout_height="match_parent"  
+            android:layout_weight="1"  
+            android:gravity="center"  
+            android:orientation="vertical" >  
+  
+            <ImageView  
+                android:id="@+id/limyissue"  
+                android:layout_width="wrap_content"  
+                android:layout_height="0dp"
+                android:layout_weight="1"  
+                android:background="#00000000"  
+                android:src="@drawable/tab_myissue" />  
+  
+            <TextView  
+                android:id="@+id/ltmyissue"  
+                android:layout_width="wrap_content"  
+                android:layout_height="0dp"
+                android:layout_weight="1"  
+                android:text="我发布的"  
+                android:textColor="#FFFFFF" />  
+        </LinearLayout>  
+  
+        <LinearLayout  
+            android:id="@+id/lypersonal"  
+            android:layout_width="0dp"  
+            android:layout_height="match_parent"  
+            android:layout_weight="1"  
+            android:gravity="center"  
+            android:orientation="vertical" >  
+  
+            <ImageView  
+                android:id="@+id/lipersonal"  
+                android:layout_width="wrap_content"  
+                android:layout_height="0dp"
+                android:layout_weight="1" 
+                android:background="#00000000"  
+                android:src="@drawable/tab_personal" />  
+  
+            <TextView  
+                android:id="@+id/ltpersonal"  
+                android:layout_width="wrap_content"  
+                android:layout_height="0dp"
+                android:layout_weight="1"  
+                android:text="个人中心"  
+                android:textColor="#FFFFFF" />  
+        </LinearLayout>  
+  
+         
+    </LinearLayout>  
+  
+</LinearLayout>  

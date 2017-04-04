@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FCFCFC"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:background="#DBDBDB"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="horizontal">
+	    
+	    <TextView 
+	        android:layout_width="10dp"
+	        android:layout_height="60dp"/>
+	  <ImageView 
+        android:id="@+id/task_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/bai"/>
+    
+    <LinearLayout 
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+        
+        <TextView 
+            android:id="@+id/task_spot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="高碑店市白沟镇你爸爸家"
+            android:textSize="16sp"/>
+        
+        <TextView 
+            android:id="@+id/task_reward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textSize="14sp"
+            android:text="6.00"
+            android:textColor="#EE7600"/>
+
+      </LinearLayout>
+    
+          <TextView
+            android:id="@+id/task_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:textColor="#CDC9C9"
+            android:text="17:00"
+            android:layout_marginTop="20dp"
+            android:textSize="12sp" />
+	</LinearLayout>
+    
+</LinearLayout>

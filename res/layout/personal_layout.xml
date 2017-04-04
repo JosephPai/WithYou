@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_scene"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="个人中心"
+        android:textColor="#fff"
+        android:textSize="24sp"
+        android:background="#0E6DB0"/>
+      
+	<ImageButton 
+	    android:id="@+id/login_head"
+	    android:layout_width="100dp"
+	    android:layout_height="100dp"
+	    android:layout_gravity="center"
+	    android:background="@drawable/head"/>
+	
+<!--	<TextView 
+	    android:id="@+id/login_text"
+	    android:text="登录/注册"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    android:textColor="#fff"
+	    android:textSize="18sp"/>		-->
+	
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal">
+	    
+	    <Button 
+	        android:id="@+id/log_pic"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:text="照片注册 / 登录"/>
+	    <TextView 
+	        android:layout_height="100dp"
+	        android:layout_width="40dp"/>
+
+	    <Button
+	        android:id="@+id/log_vid"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:text="视频检测登录" />		
+
+	</LinearLayout>	
+	
+	<TextView 
+	    android:layout_width="match_parent"
+	    android:layout_height="10dp"
+	    android:background="#DBDBDB"/>
+	
+	<ListView 
+	    android:id="@+id/list_personal"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:alpha="0.8"
+	    android:background="#fff">
+	    
+	</ListView>
+
+</LinearLayout>

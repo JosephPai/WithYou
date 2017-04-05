@@ -356,13 +356,13 @@ public class VideoVerify extends Activity {
 									frontCamera, false);
 						}
 						
-						if(!isVerified && faces.length == 1){
-							isVerified = true;
+						if(/*!isVerified &&*/ faces.length == 1){
+							//isVerified = true;
 							// 拷贝到临时数据中
 							byte[] tmp = new byte[nv21.length];
 							System.arraycopy(nv21, 0, tmp, 0, nv21.length);
 							
-							verify(Bitmap2Bytes(RotateDeg90(decodeToBitMap(tmp))));
+							register(Bitmap2Bytes(RotateDeg90(decodeToBitMap(tmp))));
 						}
 						
 						
@@ -378,7 +378,77 @@ public class VideoVerify extends Activity {
 	// FaceRequest对象，集成了人脸识别的各种功能
 	private FaceRequest mFaceRequest;
 	private boolean isVerified =  false;
-	private void verify(byte[] mImageData){
+	private boolean isRegd = false;
+	private int NUM=000;
+	
+	private void register(byte[] mImageData){
+		if (null != mImageData) {
+			//读取登陆ID
+			SharedPreferences pref = getSharedPreferences("idnumber",
+					MODE_PRIVATE);			
+			String idnum = pref.getString("num", "000");
+			// 设置用户标识，格式为6-18个字符（由字母、数字、下划线组成，不得以数字开头，不能包含空格）。
+			// 当不设置时，云端将使用用户设备的设备ID来标识终端用户。
+			mFaceRequest.setParameter(SpeechConstant.AUTH_ID, "0610477hhh");
+			mFaceRequest.setParameter(SpeechConstant.WFR_SST, "reg");
+			mFaceRequest.sendRequest(mImageData, new RequestListener() {
+				
+				@Override
+				public void onEvent(int arg0, Bundle arg1) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void onCompleted(SpeechError arg0) {
+					if(arg0 != null)
+						Log.e(TAG, "error:"+arg0.getErrorCode());
+				}
+				
+				@Override
+				public void onBufferReceived(byte[] arg0) {
+					try {
+						String result = new String(arg0, "utf-8");
+						Log.d("FaceDemo", "test");
+						Log.d("FaceDemo", result);
+						
+						JSONObject object = new JSONObject(result);
+						int ret = object.getInt("ret");
+						if (ret != 0) {
+							showTip("注册失败");
+							return;
+						}
+						if ("success".equals(object.get("rst"))) {
+							
+								showTip("注册成功，你是本机"+NUM+"号使用者");
+								NUM++;
+								String numtemp = ""+NUM;
+								SharedPreferences.Editor editor=getSharedPreferences("idnumber", MODE_PRIVATE).edit(); 
+								editor.putString("num", numtemp);
+								editor.commit();
+																
+								Intent intent2 = new Intent(VideoVerify. this,com.example.zaizai.MainActivity.class);
+								startActivity(intent2);
+								
+								finish();								
+							}else {
+							showTip("注册失败");
+						}
+					} catch (UnsupportedEncodingException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (JSONException e) {
+						// TODO: handle exception
+					}
+				}
+			});
+		} else {
+			showTip("请选择图片后再注册");
+		}
+		
+	}
+	
+	/*private void verify(byte[] mImageData){
 		if (null != mImageData) {
 			//读取登陆ID
 			Intent intent=getIntent();
@@ -423,7 +493,7 @@ public class VideoVerify extends Activity {
 								setResult(RESULT_OK,intent);*/
 								//finish();
 								
-								Intent intent2 = new Intent(VideoVerify. this,com.example.zaizai.MainActivity.class);
+								/*Intent intent2 = new Intent(VideoVerify. this,com.example.zaizai.MainActivity.class);
 								startActivity(intent2);
 								
 								finish();
@@ -446,7 +516,7 @@ public class VideoVerify extends Activity {
 			showTip("请选择图片后再验证");
 		}
 		
-	}
+	}*/
 	private Bitmap decodeToBitMap(byte[] data) {
 		try {
 			YuvImage image = new YuvImage(data, ImageFormat.NV21, PREVIEW_WIDTH,

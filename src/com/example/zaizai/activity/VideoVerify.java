@@ -356,8 +356,8 @@ public class VideoVerify extends Activity {
 									frontCamera, false);
 						}
 						
-						if(/*!isVerified &&*/ faces.length == 1){
-							//isVerified = true;
+						if(!isRegd && faces.length == 1){
+							isRegd = true;
 							// 拷贝到临时数据中
 							byte[] tmp = new byte[nv21.length];
 							System.arraycopy(nv21, 0, tmp, 0, nv21.length);
@@ -379,18 +379,19 @@ public class VideoVerify extends Activity {
 	private FaceRequest mFaceRequest;
 	private boolean isVerified =  false;
 	private boolean isRegd = false;
-	private int NUM=000;
+	private String idnum;
 	
 	private void register(byte[] mImageData){
 		if (null != mImageData) {
 			//读取登陆ID
 			SharedPreferences pref = getSharedPreferences("idnumber",
-					MODE_PRIVATE);			
-			String idnum = pref.getString("num", "000");
+					MODE_PRIVATE);		
+			idnum = pref.getString("numb", "0");
 			// 设置用户标识，格式为6-18个字符（由字母、数字、下划线组成，不得以数字开头，不能包含空格）。
 			// 当不设置时，云端将使用用户设备的设备ID来标识终端用户。
-			mFaceRequest.setParameter(SpeechConstant.AUTH_ID, "0610477hhh");
+			mFaceRequest.setParameter(SpeechConstant.AUTH_ID, idnum.toString());
 			mFaceRequest.setParameter(SpeechConstant.WFR_SST, "reg");
+			mFaceRequest.setParameter("property","del");	//覆盖注册
 			mFaceRequest.sendRequest(mImageData, new RequestListener() {
 				
 				@Override
@@ -419,14 +420,15 @@ public class VideoVerify extends Activity {
 							return;
 						}
 						if ("success".equals(object.get("rst"))) {
-							
-								showTip("注册成功，你是本机"+NUM+"号使用者");
-								NUM++;
-								String numtemp = ""+NUM;
+																					
+								int num=Integer.parseInt(idnum);
+								num++;
+								showTip("注册成功，你是本设备"+num+"号使用者");
+								String idtemp=Integer.toString(num);
 								SharedPreferences.Editor editor=getSharedPreferences("idnumber", MODE_PRIVATE).edit(); 
-								editor.putString("num", numtemp);
+								editor.putString("numb", idtemp);
 								editor.commit();
-																
+										
 								Intent intent2 = new Intent(VideoVerify. this,com.example.zaizai.MainActivity.class);
 								startActivity(intent2);
 								
